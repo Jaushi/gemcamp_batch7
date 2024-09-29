@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   root 'welcome#index'
+  get 'about_us', to: 'pages#about_us', as: 'about_us'
+  get 'contact', to: 'welcome#contact', as: 'contact'
+  resources :posts
 end

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Blog Post</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <%= link_to 'About Us', about_us_path, class: "nav-link #{'active text-light bg-dark' if current_page?(about_us_path)}", 'aria-current': 'page' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Contact', contact_path, class: "nav-link #{'active text-light bg-dark' if action_name == 'contact' && controller_name == 'welcome'}", 'aria-current': 'page' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Posts', posts_path, class: "nav-link #{'active text-light bg-dark' if controller_path == 'posts'}", 'aria-current': 'page' %>
+            </li>
+        </ul>
+    </div>
+</nav>
