@@ -12,7 +12,8 @@ class PostsController < ApplicationController
         if @post.save
             redirect_to posts_path, notice: 'Post was successfully created.'
         else
-            render :new
+            flash.now[:alert] = 'Post create failed'
+            render :new, status: :unprocessable_entity
         end
     end
 

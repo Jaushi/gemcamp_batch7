@@ -1,5 +1,13 @@
 <h1>New Post</h1>
 <div class="container">
+    <% if @post.errors.any? %>
+        <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    
     <%= form_with model: @post do |form| %>
         <div class="mb-3">
             <%= form.label :title, class: 'form-label' %>
