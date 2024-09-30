@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
-  def index; end
+  def index
+    @posts = Post.all
+  end
 
   def about_us; end
 
