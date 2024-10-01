@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   def update
     @post = Post.find(params[:id])
     if @post.update(params.require(:post).permit(:title, :content))
@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Post destroyed successfully'
+    redirect_to posts_path
+  end
   private
 
   def post_params
