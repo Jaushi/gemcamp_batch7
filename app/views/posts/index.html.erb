@@ -1,11 +1,10 @@
-<h1>Blog Post</h1>
-
-<table>
+<table class="table table-dark table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Actions</th>
+      <td>Title</td>
+      <td>Content</td>
+      <td>Actions</td>
+      <td>Created At</td>
     </tr>
   </thead>
   <tbody>
@@ -13,13 +12,12 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td>
-          <%= link_to 'Show', post_path(post), class: 'btn btn-info' %>
-          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %>
-          <td>
-              <%= button_to 'Delete', post_path(post), method: :delete, class: 'btn btn-danger' %>
-          </td>
+        <td class="actions-cell">
+          <%= link_to 'Show', post_path(post), class: 'btn btn-sm btn-primary' %>
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-sm btn-warning' %>
+          <%= button_to 'Delete', post_path(post), method: :delete, class: 'btn btn-sm btn-danger' %>
         </td>
+        <td><%= post.created_at %></td>
       </tr>
     <% end %>
   </tbody>
